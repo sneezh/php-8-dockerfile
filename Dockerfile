@@ -12,6 +12,8 @@ RUN apt-get update \
     net-tools \
     librdkafka-dev
 
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 RUN pecl install redis && docker-php-ext-enable redis
