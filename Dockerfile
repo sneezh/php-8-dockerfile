@@ -10,6 +10,8 @@ RUN apt-get update \
     curl \
     apt-utils \
     net-tools \
+    git \
+    unzip \
     librdkafka-dev
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
@@ -29,6 +31,8 @@ RUN docker-php-ext-install intl
 RUN docker-php-ext-install sockets
 
 RUN docker-php-ext-install bcmath
+
+RUN docker-php-ext-install zip
 
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
