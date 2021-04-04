@@ -11,7 +11,9 @@ RUN apt-get update \
     apt-utils \
     net-tools \
     git \
+    zip \
     unzip \
+    libzip-dev \
     librdkafka-dev
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
