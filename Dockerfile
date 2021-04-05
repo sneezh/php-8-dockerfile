@@ -14,6 +14,9 @@ RUN apt-get update \
     zip \
     unzip \
     libzip-dev \
+    sqlite3 \
+    libsqlite3-dev \
+    libpq-dev \
     librdkafka-dev
 
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
@@ -36,6 +39,6 @@ RUN docker-php-ext-install bcmath
 
 RUN docker-php-ext-install zip
 
-RUN docker-php-ext-install pdo pdo_mysql mysqli
+RUN docker-php-ext-install pdo pdo_mysql mysqli pdo_pgsql
 
 RUN pecl install rdkafka && docker-php-ext-enable rdkafka
